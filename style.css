@@ -1,0 +1,102 @@
+body{
+  background: url("bg.png");
+}
+.bubble {
+	position:relative;
+	padding:15px;
+	margin:100px 0 0.5em;
+	color:#333;
+	background:#eee;
+	
+	
+	/* css3 */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+
+.bubble p {font-size:28px; line-height:1.25em;}
+
+/* this isn't necessary, just saves me having to edit the HTML of the demo */
+.bubble:before {
+	display:block; /* reduce the damage in FF3.0 */
+	position:absolute;
+	top:-60px;
+	left:0;
+	width:155px;
+	height:36px;
+}
+
+/* creates the triangle */
+.bubble:after {
+	content:"";
+	display:block; /* reduce the damage in FF3.0 */
+	position:absolute;
+	top:-30px;
+	left:50px;
+	width:0;
+	height:0;
+	border:15px solid transparent;
+	border-bottom-color:#eee;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.bubble + p {padding-left:15px; font:14px Arial, sans-serif;}
+
+.pinched {
+	position:relative;
+	padding:15px;
+	margin:50px 0 3em;
+	text-align:center;
+	color:#fff;
+	background:#333; 
+
+	/* css3 */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+
+/* creates a rectangle of the colour wanted for the pointy bit */
+.pinched:before {
+	content:"";
+	position:absolute;
+	top:-20px;
+	left:50%;
+	width:100px;
+	height:20px;
+	margin:0 0 0 -50px;
+	background:#333;
+}
+
+/* creates a rounded rectangle to cover part of the rectangle generated above */
+.pinched:after {
+	content:"";
+	position:absolute;
+	top:-20px;
+	left:0;
+	width:50%;
+	height:20px;
+	background:#fff;
+
+	/* css3 */
+	-moz-border-radius-bottomright:15px;
+	-webkit-border-bottom-right-radius:15px;
+	border-bottom-right-radius:15px;
+}
+
+/* creates the other rounded rectangle */
+.pinched>:first-child:before {
+	content:""; 
+	position:absolute; 
+	top:-20px; 
+	right:0; 
+	width:50%; 
+	height:20px; 
+	background:#fff;
+
+	/* css3 */
+	-moz-border-radius-bottomleft:15px;
+	-webkit-border-bottom-left-radius:15px;
+	border-bottom-left-radius:15px;
+}
